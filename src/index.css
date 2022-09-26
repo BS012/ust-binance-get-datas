@@ -1,13 +1,258 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+    background-color: #191218;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+header{
+    background-color: #060606;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    box-shadow: 0 3px 10px #050505;
+}
+
+header .center{
+    color: white;
+    font-weight: bold;
+}
+
+.container{
+    max-width: 1000px;
+    margin: auto;
+}
+
+.information{
+    margin-top: 30px;
+    border: 2px solid #D29658;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.information .title{
+    color: darkgray;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.information .text{
+    margin-top: 20px;
+    color: darkgray;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.keys-form{
+    margin-top: 40px;
+    margin-bottom: 50px;
+    border: 2px solid darkgray;
+    border-radius: 10px;
+    padding: 20px;
+
+    box-shadow: 0 0 60px #D29658;
+}
+
+.keys-form .title{
+    color: #D29658;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+.forms{
+    margin-top: 30px;
+}
+
+.label-form{
+    color: #D29658;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin: 10px 0
+}
+
+.input{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+
+    color: white;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.input:focus{
+    outline: none;
+}
+
+.content-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    max-width: 200px;
+    margin-top: 20px;
+    color: white;
+    font-size: 0.9em;
+    font-weight: bold;
+    background-color: #D29658;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+.btn:hover{
+    cursor: pointer;
+    border: 1px solid white;
+}
+.btn:active{
+    background-color: #735331;
+}
+.disabled{
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.results{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divider{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: stretch;
+
+    color: #D29658;
+    font-weight: 800;
+    font-size: 1.1em;
+
+    margin-bottom: 10px;
+}
+
+.divider::before,.divider::after{
+    content: "";
+    flex-grow: 1;
+    height: 2px;
+    width: 100%;
+
+    background-color: darkgray;
+    opacity: 0.5;
+}
+.divider:not(:empty) {
+    gap: 1rem;
+}
+
+.deposit-title{
+    color: darkgray;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.deposit-address{
+    color: #D29658;
+    font-weight: 800;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    color: darkgray;
+    font-weight: 600;
+    font-size: 0.8em;
+}
+
+
+.content-table {
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+    background-color: #D29658;
+    color: #ffffff;
+    text-align: center;
+
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+    color: white;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px inset #060606;
+    border-left: 1px inset #060606;
+    border-right: 1px inset #060606;
+
+    font-weight: 500;
+}
+
+.content-table tbody tr:nth-of-type(2n) {
+    background-color: #060606;
+}
+
+.content-table tbody tr:nth-of-type(2n+1) {
+    background-color: #191218;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #D29658;
+}
+
+.content-table tbody td:first-of-type {
+    color: #6dc255;
+    font-weight: 800;
+}
+
+.content-table tbody td .action-buy {
+    color: #6dc255;
+    font-weight: 800;
+}
+
+.content-table tbody td .action-buy {
+    color: #c25555;
+    font-weight: 800;
+}
+
+.error{
+    border: 2px solid #400303;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #cc5656;
+    text-align: center;
+
+    font-weight: bold;
 }

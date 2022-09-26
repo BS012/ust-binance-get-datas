@@ -1,0 +1,1 @@
+export const informations = "API Keys provided by the Victim has to be in READ-ONLY mode."
